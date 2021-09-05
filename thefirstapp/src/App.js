@@ -1,10 +1,20 @@
-import {React, componant } from "react" ;
+import { React, Component } from "react";
+import Header from "./component/Header";
+import Footer from "./component/Footer";
+import Main from "./component/Main";
 
-class App extends componant{
+class  App extends Component{
   render(){
-    return <h> hello </h>
+    return(
+    <>
+      <Header/>
+      <Main/>
+      <Footer/>
+      
+    </>
+    
+    )
   }
 }
-
 
 export default App
