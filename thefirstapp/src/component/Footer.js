@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
- class Footer extends Component {
+class Footer extends Component {
     render() {
         return (
             <div>
-               <h3>The Author : Duha Abu-Ghazleh</h3> 
+                <h3>The Author : Duha Abu-Ghazleh</h3>
             </div>
         )
     }
