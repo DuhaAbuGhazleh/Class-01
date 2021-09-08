@@ -22,28 +22,12 @@ import {
      }
 
 
-  /*  render() {
-        return (
-            <div>
-               <h2>title : {this.props.title}</h2>
-               <img onClick={this.riseVote} src={this.props.image_url} alt={this.props.title} title='horned image'/>
-              <h2>vote: {this.state.like}</h2> 
-                <p>description:{this.props.description} </p> 
-                <p>keyword:{this.props.keyword} </p> 
-                <p> horns:{this.props.horns} </p> 
-              
 
-            </div>
-        )
-    }
-    */
-
-
-      getHandleOpen=()=>{
-          let image_url=this.props.image_url;
+       getHandleOpen=()=>{
+           let image_url=this.props.image_url;
           let title=this.props.title;
           this.props.handleOpen(image_url,title);
-      }
+     }
 
     render(){
       return(
@@ -54,7 +38,9 @@ import {
                 <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
                     <Card.Text>
-                       {this.props.description}
+                    vote: {this.state.like} 
+                    <br/>
+                    description: {this.props.description}
                        <br />
                        keyword:{this.props.keyword} 
                        <br />
@@ -64,7 +50,7 @@ import {
                                 onClick={this.getHandleOpen}
                                 variant="primary"
                         >
-                                Go somewhere
+                                Show Horned Beast
                         </Button>
                 </Card.Body>
             </Card>
@@ -75,5 +61,5 @@ import {
     }
 }
 
-export default UserData
+export default UserData;
 

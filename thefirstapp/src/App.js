@@ -7,11 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
 
-
     constructor(props) {
         super(props);
         this.state = {
-            ShowModal: false,
+            showModal: false,
             image_url: "",
             title: ""
         }
@@ -30,23 +29,27 @@ class App extends Component {
 
         })
     }
+
     render() {
         return (
             <>
                 <Header />
                 <Main handleOpen={this.handleOpen} />
 
-                <SelectedBeast
-                    handleClose={this.handleClose}
+                <SelectedBeast handleClose={this.handleClose}
                     showModal={this.state.showModal}
                     image_url={this.state.image_url}
                     title={this.state.title}
+
                 />
+
                 <Footer />
             </>
-
         )
     }
 }
+
+
+
 
 export default App
