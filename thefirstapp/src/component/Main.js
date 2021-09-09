@@ -2,41 +2,47 @@ import React, { Component } from 'react'
 import UserData from './UserData'
 import Datajson from '../data.json';
 import HorneForm from './HorneForm';
-import CardColumns from "react-bootstrap/CardColumns";
+
 
 class Main extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        Renderhorns: Datajson,
+    }
+}
 
-    constructor(props) {
-        super(props);
-        this.state = {
-          filteredData: this.props.Datajson,
-        };
-      }
-    
-      filterResult = (value) => {
-        if (value === "All") {
-          this.setState({
-            filteredData: this.props.Datajson,
-          });
-        } else {
-          let newFilteredData = this.props.Datajson.filter((beast) => beast.horns === Number(value));
-          this.setState({
-            filteredData: newFilteredData,
-          });
-        }
-      };
+sorting = (event) => {
+    let inter = event.target.value;
+
+    let filterArray = [];
+
+    filterArray = Datajson.filter(element => {
+        if (element.horns == inter) { return true }
+    }
+    )
+    this.setState({
+        Renderhorns: filterArray
+    })
+
+    if (filterArray.length == 0) {
+        this.setState({
+            Renderhorns: Datajson
+        })
+    }
+}
 
     render() {
 
         return (
 
             <>
-           <HorneForm filterResult={this.filterResult} />
+           <HorneForm filterResult={this.sorting} />
             
             <div className="row">
-                {this.state.filteredData.map((elementjson,i) => {
+                {this.state.Renderhorns.map((elementjson,index) => {
                     return <UserData
-                    key={i}
+                    key={index}
                         image_url={elementjson.image_url}
                         title={elementjson.title}
                         description={elementjson.description}

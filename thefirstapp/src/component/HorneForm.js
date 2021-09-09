@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Form } from 'react-bootstrap/'
 
 class hornedForm extends Component {
 
@@ -8,11 +8,11 @@ class hornedForm extends Component {
             <div>
 <fieldset>
 <legend> Beast Horns</legend>
-                <form onSubmit={this.props.handleSubmit}>
+                <form onChange={this.props.filterResult}>
                   
 
                             <label >view the beasts by the number of horns:</label>
-                            <select onChange={(e) => this.props.filterResult(e.target.value)}>
+                            <select >
                                 <option value="All">ALL Horns</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>

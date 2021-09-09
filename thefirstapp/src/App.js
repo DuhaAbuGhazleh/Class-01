@@ -4,7 +4,7 @@ import Footer from "./component/Footer";
 import Main from "./component/Main";
 import SelectedBeast from "./component/SelectedBeast"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Datajson from "../src/data.json"
+
 class App extends Component {
 
     constructor(props) {
@@ -30,25 +30,12 @@ class App extends Component {
         })
     }
 
-
-    renderModel = (newBeastPropTitle) => {
-        let newBeastProp = this.state.Datajson.filter((beast) => beast.title === newBeastPropTitle)[0];
-        newBeastProp.value++;
-        this.setState({
-          newSelectedBeast: newBeastProp,
-          show: true,
-          value: this.state.value + 1,
-        });
-      };
-    
-
     render() {
         return (
             <>
                 <Header />
-                {/* <Main handleOpen={this.handleOpen} /> */}
-<Main Datajson={Datajson}
-        renderModel={this.renderModel} />
+                <Main handleOpen={this.handleOpen} />
+
                 <SelectedBeast handleClose={this.handleClose}
                     showModal={this.state.showModal}
                     image_url={this.state.image_url}
